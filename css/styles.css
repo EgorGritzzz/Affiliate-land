@@ -1,0 +1,1030 @@
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+}
+
+body {
+    position: relative;
+    background: #F4F8FC;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #2E73C4;
+}
+
+a {
+    font: inherit;
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+    border: none;
+    background-color: unset;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+span {
+    font: inherit;
+    color: inherit;
+}
+
+/* Reuseble styles */
+
+.main-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.protect {
+    width: 100%;
+    position: absolute;
+    top: 4px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.protect__item {
+    font-size: 8px;
+    line-height: 10px;
+    color: var(--Black, #020D1B);
+    opacity: 0.2;
+}
+
+.protect__item a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.title-secondary {
+    color: var(--Black, #020D1B);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.title-secondary.blue {
+    color: var(--Blue, #2E73C4);
+}
+
+.subtitle {
+    color: var(--Black, #020D1B);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.description {
+    color: var(--Black, #020D1B);
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.description.description-500 {
+    font-weight: 500;
+}
+
+.description b {
+    font-weight: 700;
+}
+
+.btn {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--Blue, #2E73C4);
+    box-shadow: 0px 3px 10px 0px rgba(46, 115, 196, 0.25);
+    padding: 20px 40px;
+    color: var(--White, #FFF);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.btn:hover {
+    background: #3980D4;
+}
+
+.btn:active {
+    background: #226ABE;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+/* header */
+
+.header {
+    padding: 20px 0;
+}
+
+.header__container {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    max-width: 190px;
+    width: 100%;
+}
+
+/* firstScreen section */
+
+.firstScreen {
+    background: linear-gradient(0deg, #F4F8FC 0%, rgba(244, 248, 252, 0.00) 50%), url(../images/firstScreen-background.jpg), lightgray -77.964px 0px / 108.121% 100% no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0 120px;
+}
+
+.firstScreen__title {
+    color: #FFF;
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.firstScreen__subtitle {
+    color: #FFF;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 50px;
+}
+
+.firstScreen__container {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    margin-bottom: 50px;
+}
+
+.firstScreen__graph {
+    max-width: 684px;
+    width: 100%;
+    border-radius: 20px;
+    background: linear-gradient(0deg, #F4F8FC 0%, rgba(244, 248, 252, 0.00) 100%), url(./firstScreen-graph-background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.05);
+    padding: 78.44px 0;
+}
+
+.firstScreen__graph-wrapper {
+    position: relative;
+}
+
+.hero_timeList {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 36px;
+}
+
+.hero_timeList-item {
+    color: var(--state-filter-unselected, #748497);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.hero_timeList-item p {
+    font: inherit;
+}
+
+.hero_timeList-item.spoiler {
+    cursor: pointer;
+}
+
+.hero_timeList-item.active {
+    color: #2850e7;
+}
+
+.hero_timeList-item.active .hero_timeList-spoiler {
+    opacity: 1;
+}
+
+.hero_timeList-spoiler {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero_timeList-spoiler img {
+    max-width: unset;
+}
+
+.spoiler1 {
+    bottom: calc(100% + 70px);
+}
+
+.spoiler2 {
+    bottom: calc(100% + 91px);
+}
+
+.spoiler3 {
+    bottom: calc(100% + 116px);
+}
+
+.spoiler4 {
+    bottom: calc(100% + 223px);
+}
+
+.hero_timeList-spoiler p {
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.firstScreen__brands {
+    display: grid;
+    grid-template-columns: repeat(4, 106px);
+    justify-content: space-between;
+    row-gap: 30px;
+}
+
+.firstScreen__brands-item {
+    max-width: 106px;
+    object-fit: contain;
+}
+
+/* what-is section */
+
+.what-is {
+    padding-bottom: 120px;
+}
+
+.what-is__container {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 151px;
+}
+
+.what-is__right {
+    max-width: 565px;
+}
+
+.what-is__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.what-is__left .title-secondary {
+    margin-bottom: 40px;
+}
+
+.what-is__left .what-is__content {
+    margin-bottom: 120px;
+}
+
+.what-is__coins {
+    margin-bottom: 40px;
+}
+
+.what-is__planet-mob,
+.what-is__coins-mob {
+    display: none;
+}
+
+.what-is__right .what-is__content {
+    margin-bottom: 40px;
+}
+
+/* why-cryptocurrencis section */
+
+.why-cryptocurrencis {
+    padding-bottom: 120px;
+}
+
+.why-cryptocurrencis .title-secondary.blue {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 767px) {
+    .why-cryptocurrencis .title-secondary.blue br {
+        display: none;
+    }
+}
+
+.why-cryptocurrencis__subtitle {
+    max-width: 1162px;
+    text-align: center;
+    margin: 0 auto 50px;
+}
+
+.why-cryptocurrencis__container {
+    display: flex;
+    column-gap: 50px;
+    margin-bottom: 50px;
+}
+
+.why-cryptocurrencis__left,
+.why-cryptocurrencis__right {
+    flex-basis: 50%;
+}
+
+.why-cryptocurrencis__left {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    row-gap: 50px;
+}
+
+.why-cryptocurrencis__small-item {
+    flex-basis: 50%;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.why-cryptocurrencis__small-item-icon {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.why-cryptocurrencis__small-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.why-cryptocurrencis__big-item {
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.why-cryptocurrencis__big-item-illustration {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.why-cryptocurrencis__big-item-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 30px;
+}
+
+.why-cryptocurrencis__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.05);
+    padding: 50px;
+    margin-bottom: 50px;
+}
+
+.why-cryptocurrencis__advantage {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.why-cryptocurrencis__advantage-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+
+.why-cryptocurrencis__advantage-illustration {
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.why-cryptocurrencis__last {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    margin-bottom: 50px;
+}
+
+.why-cryptocurrencis__last .why-cryptocurrencis__big-item-illustration {
+    height: 240px;
+}
+
+.why-cryptocurrencis__button {
+    margin: 0 auto;
+}
+
+/* different section */
+
+.different {
+    background: #FFF;
+    padding: 120px 0;
+    margin-bottom: 120px;
+}
+
+.different .title-secondary.blue {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.different__subtitle {
+    max-width: 1162px;
+    text-align: center;
+    margin: 0 auto 50px;
+}
+
+.different__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+}
+
+.different__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 151px;
+}
+
+.different__item:nth-child(2n+2) {
+    flex-direction: row-reverse;
+}
+
+.different__item-info {
+    max-width: 684px;
+}
+
+.different__item-info .title-secondary {
+    margin-bottom: 40px;
+}
+
+.different__item-content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.different__button {
+    margin-top: 40px;
+}
+
+.different__item-illustration {
+    max-width: 463px;
+    object-fit: cover;
+}
+
+/* faq section */
+
+.faq .title-secondary.blue {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.faq__container {
+    max-width: 1162px;
+    margin: 0 auto;
+}
+
+.faq__item {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    background: #FFF;
+    border-bottom: 2px solid rgba(189, 219, 255, 0.3);
+    padding: 50px;
+}
+
+.faq__item:first-child {
+    border-radius: 20px 20px 0 0;
+}
+
+.faq__item:last-child {
+    border-radius: 0 0 20px 20px;
+    border-bottom: 0;
+}
+
+.faq__item-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 32px;
+}
+
+.faq__item-close {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #2E73C4;
+}
+
+.faq__item-close:before,
+.faq__item-close:after {
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 2px;
+    background: #FFF;
+}
+
+.faq__item-close:before {
+    transform: rotate(90deg);
+}
+
+.faq__item-answer {
+    transition: all 0.3s ease-in-out;
+    height: 0;
+    opacity: 0;
+    font-size: 0;
+}
+
+.faq__item.open .faq__item-close:before {
+    transform: rotate(45deg);
+}
+
+.faq__item.open .faq__item-close:after {
+    transform: rotate(-45deg);
+}
+
+.faq__item.open .faq__item-answer {
+    height: 100%;
+    opacity: 1;
+    font-size: 18px;
+    padding-top: 24px;
+}
+
+.highlights {
+    background: url(../images/highlights-background.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 120px 0;
+}
+
+.highlights .title-secondary.blue {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.highlights__container {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.highlights__info {
+    max-width: 684px;
+    width: 100%;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.05);
+    padding: 50px 30px;
+}
+
+.highlights__info-item {
+    display: flex;
+    align-items: stretch;
+    border-radius: 20px;
+    background: #FFF;
+}
+
+.highlights__info-item:nth-child(2n+2) {
+    background: #EFF6FF;
+}
+
+.highlights__info-item-left {
+    display: flex;
+    align-items: center;
+    color: var(--Black, #020D1B);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: normal;
+    max-width: 270px;
+    width: 100%;
+    border-right: 1px solid #BDDBFF;
+    padding: 20px;
+}
+
+.highlights__info-item-right {
+    padding: 20px 30px 20px 20px;
+}
+
+.description.highlights__info-item-right {
+    font-size: 18px;
+}
+
+@media (max-width: 1420px) {
+    .container {
+        padding: 0 19px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .firstScreen__container {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .firstScreen__form {
+        max-width: 666px;
+        margin: 0 auto;
+    }
+    .what-is__container {
+        column-gap: 20px;
+    }
+    .what-is__left,
+    .what-is__right {
+        max-width: unset;
+        flex-basis: 50%;
+    }
+    .highlights__container {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+    .highlights__form {
+        max-width: 666px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 1120px) {
+    .title-secondary {
+        font-size: 36px;
+    }
+    .subtitle {
+        font-size: 26px;
+    }
+    .description {
+        font-size: 16px;
+    }
+    .firstScreen {
+        background: linear-gradient(0deg, #F4F8FC 0%, rgba(244, 248, 252, 0.00) 50%), url(../images/firstScreen-background-tab.jpg), lightgray -77.964px 0px / 108.121% 100% no-repeat;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 100px;
+    }
+    .firstScreen__title {
+        font-size: 50px;
+    }
+    .firstScreen__subtitle {
+        font-size: 26px;
+    }
+    .what-is {
+        padding-bottom: 100px;
+    }
+    .what-is__left .title-secondary {
+        margin-bottom: 30px;
+    }
+    .what-is__content {
+        row-gap: 15px;
+    }
+    .what-is__left {
+        position: relative;
+    }
+    .what-is__left .what-is__content {
+        margin-bottom: 50px;
+    }
+    .what-is__planet {
+        position: absolute;
+        width: 460px;
+        max-width: unset;
+        margin-bottom: 0;
+    }
+    .what-is__coins {
+        position: absolute;
+        width: 250px;
+        max-width: unset;
+        margin-bottom: 0;
+    }
+    .what-is__right .what-is__content {
+        padding-top: 563px;
+        margin-bottom: 30px;
+    }
+    .why-cryptocurrencis {
+        padding-bottom: 100px;
+    }
+    .why-cryptocurrencis__container {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    .why-cryptocurrencis__left {
+        row-gap: 30px;
+    }
+    .why-cryptocurrencis__big-item-illustration {
+        height: 292px;
+    }
+    .why-cryptocurrencis__wrapper {
+        row-gap: 30px;
+        padding: 50px 30px;
+    }
+    .why-cryptocurrencis__advantage {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 20px;
+    }
+    .why-cryptocurrencis__last {
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 30px;
+    }
+    .why-cryptocurrencis__last .why-cryptocurrencis__big-item-illustration {
+        height: 260px;
+    }
+    .different {
+        padding: 100px 0;
+        margin-bottom: 100px;
+    }
+    .different__item {
+        column-gap: 20px;
+    }
+    .different__item-info {
+        min-width: 355px;
+    }
+    .different__item-info .title-secondary {
+        margin-bottom: 30px;
+    }
+    .different__item-content {
+        row-gap: 15px;
+    }
+    .different__button {
+        margin-top: 30px;
+    }
+    .faq__item.open .faq__item-answer {
+        font-size: 16px;
+    }
+    .highlights {
+        padding: 100px 0;
+    }
+}
+
+@media (max-width: 725px) {
+    .btn {
+        width: 100%;
+    }
+    .title-secondary {
+        font-size: 32px;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .header {
+        padding: 30px 0 20px;
+    }
+    .firstScreen {
+        background: linear-gradient(0deg, #F4F8FC 0%, rgba(244, 248, 252, 0.00) 50%), url(../images/firstScreen-background-mob.webp), lightgray -77.964px 0px / 108.121% 100% no-repeat;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 60px 0 80px;
+    }
+    .firstScreen__title {
+        font-size: 40px;
+    }
+    .firstScreen__subtitle {
+        margin-bottom: 30px;
+    }
+    .firstScreen__container {
+        row-gap: 30px;
+        margin-bottom: 30px;
+    }
+    .firstScreen__graph {
+        max-width: 360px;
+        padding: 38.99px 0;
+        margin: 0 auto;
+    }
+    .hero_timeList {
+        padding: 0 10px;
+    }
+    .spoiler1 {
+        bottom: calc(100% + 12px);
+    }
+    .spoiler2 {
+        bottom: calc(100% + 22px);
+    }
+    .spoiler3 {
+        bottom: calc(100% + 29px);
+    }
+    .spoiler4 {
+        bottom: calc(100% + 92px);
+    }
+    .firstScreen__brands {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+    .what-is__container {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    .what-is__left,
+    .what-is__right {
+        flex-basis: 100%;
+    }
+    .what-is__left {
+        padding-bottom: 440px;
+    }
+    .what-is__left .what-is__content {
+        margin-bottom: 0;
+    }
+    .what-is__left .title-secondary {
+        margin-bottom: 20px;
+    }
+    .what-is__coins {
+        bottom: 0;
+    }
+    .what-is__right .what-is__content {
+        padding-top: 0;
+        padding-bottom: 70px;
+        margin-bottom: 0;
+    }
+    .what-is__planet {
+        top: 16.9%;
+    }
+    .what-is__planet-mob,
+    .what-is__coins-mob {
+        width: 420px;
+    }
+    .what-is__planet-desk,
+    .what-is__coins-desk {
+        display: none;
+    }
+    .what-is__planet-mob,
+    .what-is__coins-mob {
+        display: block;
+    }
+    .why-cryptocurrencis {
+        padding-bottom: 80px;
+    }
+    .why-cryptocurrencis__subtitle {
+        margin-bottom: 30px;
+    }
+    .why-cryptocurrencis__container {
+        row-gap: 20px;
+        margin-bottom: 30px;
+    }
+    .why-cryptocurrencis__left {
+        row-gap: 20px;
+    }
+    .why-cryptocurrencis__small-item {
+        padding: 20px;
+    }
+    .why-cryptocurrencis__big-item-illustration {
+        height: 136px;
+    }
+    .why-cryptocurrencis__big-item-content {
+        padding: 20px;
+    }
+    .why-cryptocurrencis__wrapper {
+        padding: 30px 20px;
+        margin-bottom: 30px;
+    }
+    .why-cryptocurrencis__advantage-illustration {
+        max-width: 300px;
+        width: 100%;
+        height: 300px;
+    }
+    .why-cryptocurrencis__last {
+        row-gap: 20px;
+        margin-bottom: 30px;
+    }
+    .why-cryptocurrencis__last .why-cryptocurrencis__big-item-illustration {
+        height: 120px;
+    }
+    .different {
+        padding: 80px 0;
+        margin-bottom: 80px;
+    }
+    .different__subtitle {
+        margin-bottom: 30px;
+    }
+    .different__item {
+        position: relative;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+    .different__item:nth-child(2n+2) {
+        flex-direction: column;
+    }
+    .different__item-info {
+        min-width: unset;
+    }
+    .different__item-info .title-secondary {
+        margin-bottom: 20px;
+    }
+    .different__item-content {
+        padding-bottom: 570px;
+    }
+    .different__item-illustration {
+        max-width: 460px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    .different__item:nth-child(2n+2) img.different__item-illustration {
+        left: unset;
+        right: 0;
+    }
+    .different__item:last-child img.different__item-illustration {
+        bottom: 94px;
+    }
+    .faq .title-secondary.blue {
+        margin-bottom: 30px;
+    }
+    .faq__item {
+        padding: 30px;
+    }
+    .faq__item-question {
+        column-gap: 20px;
+    }
+    .faq__item-question .subtitle {
+        font-size: 22px;
+    }
+    .faq__item.open .faq__item-answer {
+        padding-top: 20px;
+    }
+    .highlights {
+        padding: 80px 0;
+    }
+    .highlights .title-secondary.blue {
+        margin-bottom: 30px;
+    }
+    .highlights__container {
+        row-gap: 30px;
+    }
+    .highlights__info {
+        padding: 30px 20px;
+    }
+    .highlights__info-item-left {
+        max-width: 140px;
+        width: 100%;
+        flex-shrink: 0;
+        font-size: 16px;
+        padding: 20px 14px 20px 20px;
+    }
+    .description.highlights__info-item-right {
+        font-size: 16px;
+        padding: 20px 20px 20px 15px;
+    }
+}
